@@ -332,7 +332,9 @@ static NSString *const _ChildNavigationControllerRestorationKey = @"childNavigat
     self.childNavigationController = [[UINavigationController alloc] initWithRootViewController:pageViewController];
     
     _pageViewController = pageViewController;
-    [_pageViewController.navigationController.navigationBar setPrefersLargeTitles:YES];
+    if (@available(iOS 11, *)) {
+        [_pageViewController.navigationController.navigationBar setPrefersLargeTitles:YES];
+    }
     [self setTask: task];
     
     self.showsProgressInNavigationBar = YES;
@@ -1115,7 +1117,10 @@ static NSString *const _ChildNavigationControllerRestorationKey = @"childNavigat
             _pageViewController.navigationItem.title = viewController.navigationItem.title;
             _pageViewController.navigationItem.titleView = viewController.navigationItem.titleView;
             CGFloat maxWidth = UIScreen.mainScreen.bounds.size.width - 40;
-            CGFloat fontSize = [UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle].pointSize;
+            CGFloat fontSize = 30;
+            if (@available(iOS 11, *)) {
+                fontSize = [UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle].pointSize;
+            }
             CGFloat width = [_pageViewController.navigationItem.title sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:fontSize]}].width;
             while (width > maxWidth) {
                 fontSize -= 1;
@@ -1125,7 +1130,9 @@ static NSString *const _ChildNavigationControllerRestorationKey = @"childNavigat
                 }
                 width = [_pageViewController.navigationItem.title sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:fontSize]}].width;
             }
-            _pageViewController.navigationController.navigationBar.largeTitleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:fontSize]};
+            if (@available(iOS 11, *)) {
+                _pageViewController.navigationController.navigationBar.largeTitleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:fontSize]};
+            }
         }
         if (![self shouldDisplayProgressLabel]) {
             _pageViewController.navigationItem.rightBarButtonItem = viewController.navigationItem.rightBarButtonItem;

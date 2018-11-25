@@ -117,7 +117,9 @@ static const CGFloat iPadStepTitleLabelFontSize = 50.0;
         self.title = @"";
     }
     if (!_shouldIgnoreiPadDesign && ORKNeedWideScreenDesign(self.view)) {
-        [self.navigationController.navigationBar setPrefersLargeTitles:NO];
+        if (@available(iOS 11, *)) {
+            [self.navigationController.navigationBar setPrefersLargeTitles:NO];
+        }
         [self setupiPadBackgroundView];
         [self setupiPadContentView];
         [self setupiPadStepTitleLabel];
