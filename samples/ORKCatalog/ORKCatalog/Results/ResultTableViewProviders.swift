@@ -115,7 +115,7 @@ func resultTableViewProviderForResult(_ result: ORKResult?) -> UITableViewDataSo
     case is ORKSpatialSpanMemoryResult:
         providerType = SpatialSpanMemoryResultTableViewProvider.self
         
-    case is ORKSpeechRecognitonResult:
+    case is ORKSpeechRecognitionResult:
         providerType = SpeechRecognitionResultTableViewProvider.self
         
     case is ORKStroopResult:
@@ -672,7 +672,7 @@ class SpeechRecognitionResultTableViewProvider: ResultTableViewProvider {
     //MARK: UITableViewDataSource
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        let speechRecognitionResult = result as! ORKSpeechRecognitonResult
+        let speechRecognitionResult = result as! ORKSpeechRecognitionResult
         if let segments = speechRecognitionResult.transcription?.segments {
             return segments.count + 1
         }
@@ -687,7 +687,7 @@ class SpeechRecognitionResultTableViewProvider: ResultTableViewProvider {
             return super.tableView(tableView, titleForHeaderInSection: 0)
         }
             
-        let speechRecognitionResult = result as! ORKSpeechRecognitonResult
+        let speechRecognitionResult = result as! ORKSpeechRecognitionResult
         if speechRecognitionResult.transcription?.segments != nil {
             return "Transcritption " + String(section)
         }
@@ -699,7 +699,7 @@ class SpeechRecognitionResultTableViewProvider: ResultTableViewProvider {
     // MARK: ResultTableViewProvider
     
     override func resultRowsForSection(_ section: Int) -> [ResultRow] {
-        let speechRecognitionResult = result as! ORKSpeechRecognitonResult
+        let speechRecognitionResult = result as! ORKSpeechRecognitionResult
         
         let rows = super.resultRowsForSection(section)
         
@@ -902,8 +902,11 @@ class RangeOfMotionResultTableViewProvider: ResultTableViewProvider {
         let rangeOfMotionResult = result as! ORKRangeOfMotionResult
         let rows = super.resultRowsForSection(section)
         return rows + [
-            ResultRow(text: "flexed", detail: rangeOfMotionResult.flexed),
-            ResultRow(text: "extended", detail: rangeOfMotionResult.extended)
+            ResultRow(text: "start", detail: rangeOfMotionResult.start),
+            ResultRow(text: "finish", detail: rangeOfMotionResult.finish),
+            ResultRow(text: "minimum", detail: rangeOfMotionResult.minimum),
+            ResultRow(text: "maximum", detail: rangeOfMotionResult.maximum),
+            ResultRow(text: "range", detail: rangeOfMotionResult.range)
         ]
     }
 }
