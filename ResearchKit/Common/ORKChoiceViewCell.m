@@ -251,7 +251,6 @@ static const CGFloat cardTopBottomMargin = 2.0;
     if (_longLabel == nil) {
         _longLabel = [ORKSelectionSubTitleLabel new];
         _longLabel.numberOfLines = 0;
-        _longLabel.textColor = [UIColor ork_darkGrayColor];
         [self.containerView addSubview:_longLabel];
     }
     return _longLabel;

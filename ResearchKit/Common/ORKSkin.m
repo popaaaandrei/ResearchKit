@@ -53,6 +53,7 @@ NSString *const ORKNavigationContainerColorKey = @"ORKNavigationContainerColorKe
 NSString *const ORKNavigationContainerShadowColorKey = @"ORKNavigationContainerShadowColorKey";
 NSString *const ORKProgressLabelColorKey = @"ORKProgressLabelColorKey";
 NSString *const ORKiPadBackgroundViewColorKey = @"ORKiPadBacgroundViewColorKey";
+NSString *const DesignColorTextKey = @"DesignColorTextKey";
 CGFloat ORKQuestionStepMinimumHeaderHeight = 29.75;
 CGFloat ORKCardDefaultCornerRadii = 10.0;
 CGFloat ORKCardDefaultBorderWidth = 0.5;
@@ -110,6 +111,7 @@ static NSMutableDictionary *colors() {
                     ORKNavigationContainerShadowColorKey: [UIColor blackColor],
                     ORKProgressLabelColorKey: [UIColor colorWithRed:142.0/255.0 green:142.0/255.0 blue:142.0/255.0 alpha:1.0],
                     ORKiPadBackgroundViewColorKey: [UIColor colorWithRed:249.0 / 255.0 green:249.0 / 255.0 blue:251.0 / 255.0 alpha:1.0],
+                    DesignColorTextKey: ORKRGB(0x272727),
                     } mutableCopy];
     });
     return colors;

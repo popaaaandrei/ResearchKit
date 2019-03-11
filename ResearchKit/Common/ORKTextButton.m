@@ -30,7 +30,7 @@
 
 
 #import "ORKTextButton.h"
-
+#import "ORKSkin.h"
 
 @implementation ORKTextButton
 
@@ -68,8 +68,9 @@
 - (void)tintColorDidChange {
     [super tintColorDidChange];
     
-    [self setTitleColor:[self tintColor] forState:UIControlStateNormal];
-    [self setTitleColor:[[self tintColor] colorWithAlphaComponent:0.7] forState:UIControlStateHighlighted];
+    UIColor *fontColor = ORKColor(DesignColorTextKey);
+    [self setTitleColor:fontColor forState:UIControlStateNormal];
+    [self setTitleColor:[fontColor colorWithAlphaComponent:0.7] forState:UIControlStateHighlighted];
 }
 
 - (void)updateAppearance {

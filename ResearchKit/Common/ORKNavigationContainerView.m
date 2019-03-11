@@ -361,13 +361,6 @@ static const CGFloat shadowHeight = 0.75;
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(self.bounds.origin.x, self.bounds.origin.y - shadowHeight, self.bounds.size.width, shadowHeight)];
-    self.layer.shadowPath = shadowPath.CGPath;
-    self.layer.shadowColor = ORKColor(ORKNavigationContainerShadowColorKey).CGColor;
-    self.layer.shadowOffset = CGSizeZero;
-    self.layer.shadowOpacity = 0.2;
-    self.layer.shadowRadius = 1.0;
-    self.layer.masksToBounds = NO;
     [self arrangeSubStacks];
 }
 

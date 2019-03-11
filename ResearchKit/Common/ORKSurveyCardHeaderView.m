@@ -74,7 +74,7 @@ static const CGFloat HeadlineViewTitleLeftRightPadding = 10.0;
         _titleLabel = [UILabel new];
     }
     _titleLabel.numberOfLines = 0;
-    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.textColor = ORKColor(DesignColorTextKey);
     _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _titleLabel.text = _title;
     [_titleLabel setFont:[UIFont systemFontOfSize:ORKCardDefaultFontSize weight:UIFontWeightBold]];

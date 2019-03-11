@@ -33,6 +33,7 @@
 
 #import "ORKHelpers_Internal.h"
 
+#import "ORKSkin.h"
 
 @implementation ORKLabel
 
@@ -58,6 +59,7 @@
                                                  name:UIContentSizeCategoryDidChangeNotification
                                                object:nil];
     self.font = [[self class] defaultFont];
+    self.textColor = ORKColor(DesignColorTextKey);
     [self updateAppearance];
 }
 

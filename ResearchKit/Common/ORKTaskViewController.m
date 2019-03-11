@@ -1125,6 +1125,9 @@ static NSString *const _ChildNavigationControllerRestorationKey = @"childNavigat
             }
             if (@available(iOS 11, *)) {
                 _pageViewController.navigationController.navigationBar.largeTitleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:fontSize]};
+                _pageViewController.navigationController.navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName : ORKColor(DesignColorTextKey)};
+            } else {
+                _pageViewController.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : ORKColor(DesignColorTextKey)};
             }
         }
         if (![self shouldDisplayProgressLabel]) {

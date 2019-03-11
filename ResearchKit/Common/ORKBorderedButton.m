@@ -31,6 +31,7 @@
 
 #import "ORKBorderedButton.h"
 #import "ORKTextButton_Internal.h"
+#import "ORKSkin.h"
 
 
 @implementation ORKBorderedButton {
@@ -74,7 +75,8 @@
 }
 
 - (void)setDefaultTintColors {
-    _normalTintColor = [[self tintColor] colorWithAlphaComponent:0.7f];
+    UIColor *defaultTextColor = ORKColor(DesignColorTextKey);
+    _normalTintColor = [defaultTextColor colorWithAlphaComponent:0.7f];
     _normalHighlightOrSelectTintColor = [_normalTintColor colorWithAlphaComponent:1.0f];
     _disableTintColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.3f];
 }
