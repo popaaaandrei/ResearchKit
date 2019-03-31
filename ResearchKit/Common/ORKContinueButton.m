@@ -57,21 +57,21 @@ static const CGFloat ContinueButtonTouchMargin = 10;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    gradientLayer.frame = self.bounds;
-    gradientLayer.cornerRadius = self.bounds.size.height / 2;
-    
-    
     [self.layer setCornerRadius: self.bounds.size.height / 2];
-    gradientLayer.frame = self.bounds;
-    UIColor *firstColor = [UIColor colorWithRed:0.07 green:0.68 blue:0.59 alpha:1.0];
-    UIColor *secondColor = [UIColor colorWithRed:0.18 green:0.77 blue:0.87 alpha:1.0];
-    gradientLayer.colors = @[(id)firstColor.CGColor, (id)secondColor.CGColor];
-    gradientLayer.locations = [NSArray arrayWithObjects:[NSNumber numberWithInt: 0.0], [NSNumber numberWithInt: 1.0], nil];
-    gradientLayer.startPoint = CGPointMake(0.0, 1.0);
-    gradientLayer.endPoint = CGPointMake(1.0, 1.0);
+
+    if (self.state != UIControlStateDisabled) {
+        gradientLayer.frame = self.bounds;
+        gradientLayer.cornerRadius = self.bounds.size.height / 2;
+        UIColor *firstColor = [UIColor colorWithRed:0.07 green:0.68 blue:0.59 alpha:1.0];
+        UIColor *secondColor = [UIColor colorWithRed:0.18 green:0.77 blue:0.87 alpha:1.0];
+        gradientLayer.colors = @[(id)firstColor.CGColor, (id)secondColor.CGColor];
+        gradientLayer.locations = [NSArray arrayWithObjects:[NSNumber numberWithInt: 0.0], [NSNumber numberWithInt: 1.0], nil];
+        gradientLayer.startPoint = CGPointMake(0.0, 1.0);
+        gradientLayer.endPoint = CGPointMake(1.0, 1.0);
     
-    [gradientLayer removeFromSuperlayer];
-    [self.layer insertSublayer: gradientLayer atIndex:0];
+        [gradientLayer removeFromSuperlayer];
+        [self.layer insertSublayer: gradientLayer atIndex:0];
+    }
 }
 
 - (void)willMoveToWindow:(UIWindow *)newWindow {
