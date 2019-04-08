@@ -62,12 +62,29 @@ static const CGFloat ContinueButtonTouchMargin = 10;
     if (self.state != UIControlStateDisabled) {
         gradientLayer.frame = self.bounds;
         gradientLayer.cornerRadius = self.bounds.size.height / 2;
-        UIColor *firstColor = [UIColor colorWithRed:0.07 green:0.68 blue:0.59 alpha:1.0];
-        UIColor *secondColor = [UIColor colorWithRed:0.18 green:0.77 blue:0.87 alpha:1.0];
+        UIColor *firstColor = [UIColor colorWithRed:40/255.0
+                                              green:204/255.0
+                                               blue:200/255.0
+                                              alpha:1.0];
+        UIColor *secondColor = [UIColor colorWithRed:70/255.0
+                                               green:160/255.0
+                                                blue:234/255.0
+                                               alpha:1.0];
         gradientLayer.colors = @[(id)firstColor.CGColor, (id)secondColor.CGColor];
         gradientLayer.locations = [NSArray arrayWithObjects:[NSNumber numberWithInt: 0.0], [NSNumber numberWithInt: 1.0], nil];
         gradientLayer.startPoint = CGPointMake(0.0, 1.0);
         gradientLayer.endPoint = CGPointMake(1.0, 1.0);
+        
+        UIColor *shadowColor = [UIColor colorWithRed:132/255.0
+                                               green:155/255.0
+                                                blue:179/255.0
+                                               alpha:1.0];
+        
+        gradientLayer.shadowColor = shadowColor.CGColor;
+        gradientLayer.shadowOffset = CGSizeMake(0, 16);
+        gradientLayer.shadowRadius = 20;
+        gradientLayer.shadowOpacity = 0.3;
+        gradientLayer.masksToBounds = false;
     
         [gradientLayer removeFromSuperlayer];
         [self.layer insertSublayer: gradientLayer atIndex:0];

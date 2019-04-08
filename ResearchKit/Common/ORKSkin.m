@@ -93,7 +93,7 @@ static NSMutableDictionary *colors() {
     dispatch_once(&onceToken, ^{
         colors = [@{
                     ORKSignatureColorKey: ORKRGB(0x000000),
-                    ORKBackgroundColorKey: [UIColor colorWithRed:239.0 / 255.0 green:239.0 / 255.0 blue:244.0 / 255.0 alpha:1.0],
+                    ORKBackgroundColorKey: [UIColor colorWithRed:245 / 255.0 green:247 / 255.0 blue:250 / 255.0 alpha:1.0],
                     ORKConsentBackgroundColorKey: ORKRGB(0xffffff),
                     ORKToolBarTintColorKey: ORKRGB(0xffffff),
                     ORKLightTintColorKey: ORKRGB(0xeeeeee),
@@ -212,7 +212,7 @@ static CGFloat ORKGetMetricForScreenType(ORKScreenMetric metric, ORKScreenType s
         {         38,        38,        38,        38,        32,        38,        38,        38},      // ORKScreenMetricMaxFontSizeHeadline
         {         30,        30,        30,        30,        30,        30,        30,        30},      // ORKScreenMetricFontSizeSurveyHeadline
         {         32,        32,        32,        32,        32,        32,        32,        32},      // ORKScreenMetricMaxFontSizeSurveyHeadline
-        {         17,        17,        17,        17,        17,        17,        17,        17},      // ORKScreenMetricFontSizeSubheadline
+        {         18,        18,        18,        18,        18,        18,        18,        18},      // ORKScreenMetricFontSizeSubheadline
         {         12,        12,        12,        12,        12,        12,        12,        12},      // ORKScreenMetricFontSizeFootnote
         {         62,        62,        62,        62,        51,        62,        62,        62},      // ORKScreenMetricCaptionBaselineToFitnessTimerTop
         {         62,        62,        62,        62,        43,        62,        62,        62},      // ORKScreenMetricCaptionBaselineToTappingLabelTop
@@ -226,8 +226,8 @@ static CGFloat ORKGetMetricForScreenType(ORKScreenMetric metric, ORKScreenType s
         {         44,        44,        44,        44,        40,        44,        44,        44},      // ORKScreenMetricIllustrationToCaptionBaseline
         {        198,       198,       198,       198,       194,       297,       297,       297},      // ORKScreenMetricIllustrationHeight
         {        300,       300,       300,       300,       176,       300,       300,       300},      // ORKScreenMetricInstructionImageHeight
-        {         55,        55,        55,        50,        44,        44,        44,        44},      // ORKScreenMetricContinueButtonHeightRegular
-        {         32,        44,        44,        32,        32,        44,        44,        44},      // ORKScreenMetricContinueButtonHeightCompact
+        {         55,        55,        55,        55,        55,        55,        55,        55},      // ORKScreenMetricContinueButtonHeightRegular
+        {         55,        55,        55,        55,        55,        55,        55,        55},      // ORKScreenMetricContinueButtonHeightCompact
         {        150,       150,       150,       150,       146,       150,       150,       150},      // ORKScreenMetricContinueButtonWidth
         {        162,       162,       162,       162,       120,       240,       240,       240},      // ORKScreenMetricMinimumStepHeaderHeightForMemoryGame
         {        200,       250,       250,       200,       180,       250,       250,       250},      // ORKScreenMetricMinimumGameViewHeightForMemoryGame

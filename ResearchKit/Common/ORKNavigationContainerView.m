@@ -34,6 +34,7 @@
 #import "ORKSkin.h"
 
 static const CGFloat ORKStackViewSpacing = 10.0;
+static const CGFloat ORKStackViewSpacingTop = 15.0;
 static const CGFloat shadowHeight = 0.75;
 
 @implementation ORKNavigationContainerView {
@@ -252,6 +253,19 @@ static const CGFloat shadowHeight = 0.75;
     [self setupParentStackView];
     [self setupSubStackViews];
     [self arrangeSubStacks];
+    
+    
+    UIColor *shadowColor = [UIColor colorWithRed:132/255.0
+                                           green:155/255.0
+                                            blue:179/255.0
+                                           alpha:1.0];
+    
+    self.layer.shadowColor = shadowColor.CGColor;
+    self.layer.shadowOffset = CGSizeMake(0, 0);
+    self.layer.shadowRadius = 20;
+    self.layer.shadowOpacity = 0.2;
+    self.layer.masksToBounds = false;
+
 }
 
 - (void)setupParentStackView {
@@ -550,7 +564,7 @@ static const CGFloat shadowHeight = 0.75;
                                                                        toItem:self
                                                                     attribute:NSLayoutAttributeTop
                                                                    multiplier:1.0
-                                                                     constant:ORKStackViewSpacing],
+                                                                     constant:ORKStackViewSpacingTop],
                                        [NSLayoutConstraint constraintWithItem:_footnoteLabel
                                                                     attribute:NSLayoutAttributeTop
                                                                     relatedBy:NSLayoutRelationEqual
