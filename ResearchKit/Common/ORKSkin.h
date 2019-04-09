@@ -133,6 +133,7 @@ void ORKColorSetColorForKey(NSString *key, UIColor *color);
 
 @interface UIColor (ORKColor)
 
++ (UIColor *)ork_lineColor;
 + (UIColor *)ork_midGrayTintColor;
 + (UIColor *)ork_redColor;
 + (UIColor *)ork_grayColor;

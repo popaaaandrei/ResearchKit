@@ -223,7 +223,7 @@ static const CGFloat HorizontalMargin = 15.0;
             CGRect lineBounds = CGRectMake(ORKCardLeftRightMargin, self.containerView.bounds.size.height - 1.0, self.containerView.bounds.size.width - 2 * ORKCardLeftRightMargin, 0.5);
             lineLayer.path = [UIBezierPath bezierPathWithRect:lineBounds].CGPath;
             lineLayer.zPosition = 0.0f;
-            [lineLayer setFillColor:[[UIColor ork_midGrayTintColor] CGColor]];
+            [lineLayer setFillColor:[[UIColor ork_lineColor] CGColor]];
 
         }
         [_contentMaskLayer addSublayer:foreLayer];

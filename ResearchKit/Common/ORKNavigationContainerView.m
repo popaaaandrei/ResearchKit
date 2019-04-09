@@ -35,6 +35,7 @@
 
 static const CGFloat ORKStackViewSpacing = 10.0;
 static const CGFloat ORKStackViewSpacingTop = 15.0;
+static const CGFloat ORKStackViewSpacingSides = 15.0;
 static const CGFloat shadowHeight = 0.75;
 
 @implementation ORKNavigationContainerView {
@@ -588,14 +589,14 @@ static const CGFloat shadowHeight = 0.75;
                                                                        toItem:self.safeAreaLayoutGuide
                                                                     attribute:NSLayoutAttributeLeft
                                                                    multiplier:1.0
-                                                                     constant:ORKStackViewSpacing],
+                                                                     constant:ORKStackViewSpacingSides],
                                        [NSLayoutConstraint constraintWithItem:_parentStackView
                                                                     attribute:NSLayoutAttributeRight
                                                                     relatedBy:NSLayoutRelationEqual
                                                                        toItem:self.safeAreaLayoutGuide
                                                                     attribute:NSLayoutAttributeRight
                                                                    multiplier:1.0
-                                                                     constant:-ORKStackViewSpacing],
+                                                                     constant:-ORKStackViewSpacingSides],
                                        [NSLayoutConstraint constraintWithItem:_footnoteLabel
                                                                     attribute:NSLayoutAttributeLeft
                                                                     relatedBy:NSLayoutRelationEqual

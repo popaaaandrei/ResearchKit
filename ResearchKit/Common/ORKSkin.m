@@ -77,6 +77,7 @@ CGFloat ORKiPadBackgroundViewLeftRightPadding = 115.0;
     return c##m; \
 }
 
+ORKCachedColorMethod(ork_lineColor, 100.0 / 255.0, 100.0 / 255.0, 100.0 / 255.0, 0.22)
 ORKCachedColorMethod(ork_midGrayTintColor, 0.0 / 255.0, 0.0 / 255.0, 25.0 / 255.0, 0.22)
 ORKCachedColorMethod(ork_redColor, 255.0 / 255.0,  59.0 / 255.0,  48.0 / 255.0, 1.0)
 ORKCachedColorMethod(ork_grayColor, 142.0 / 255.0, 142.0 / 255.0, 147.0 / 255.0, 1.0)

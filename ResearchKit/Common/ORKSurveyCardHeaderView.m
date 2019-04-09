@@ -111,7 +111,7 @@ static const CGFloat HeadlineViewTitleLeftRightPadding = 10.0;
             CGRect lineBounds = CGRectMake(ORKCardLeftRightMargin, _headlineView.bounds.size.height - 1.0, _headlineView.bounds.size.width - 2 * ORKCardLeftRightMargin, 0.5);
             lineLayer.path = [UIBezierPath bezierPathWithRect:lineBounds].CGPath;
             lineLayer.zPosition = 0.0f;
-            [lineLayer setFillColor:[[UIColor ork_midGrayTintColor] CGColor]];
+            [lineLayer setFillColor:[[UIColor ork_lineColor] CGColor]];
             
             [_headlineMaskLayer addSublayer:lineLayer];
         }

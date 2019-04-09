@@ -130,7 +130,7 @@ static const CGFloat cardTopBottomMargin = 2.0;
             CGRect lineBounds = CGRectMake(_leftRightMargin, self.containerView.bounds.size.height - 1.0, self.containerView.bounds.size.width - 2 * _leftRightMargin, 0.5);
             lineLayer.path = [UIBezierPath bezierPathWithRect:lineBounds].CGPath;
             lineLayer.zPosition = 0.0f;
-            [lineLayer setFillColor:[[UIColor ork_midGrayTintColor] CGColor]];
+            [lineLayer setFillColor:[[UIColor ork_lineColor] CGColor]];
 
         }
         [_contentMaskLayer addSublayer:foreLayer];
