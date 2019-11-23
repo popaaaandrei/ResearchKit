@@ -54,7 +54,6 @@
 
 @implementation ORKCompletionStepView {
     CAShapeLayer *_shapeLayer;
-    CAGradientLayer *_gradientLayer;
 }
 
 static const CGFloat TickViewSize = 122;
@@ -71,25 +70,8 @@ static const CGFloat TickViewSize = 122;
         [path addLineToPoint:(CGPoint){87, 42}];
         path.lineCapStyle = kCGLineCapRound;
         path.lineWidth = 5;
-    
-        CAShapeLayer *shapeLayer = [CAShapeLayer new];
-        shapeLayer.path = path.CGPath;
-        shapeLayer.lineWidth = 5;
-        shapeLayer.lineCap = kCALineCapRound;
-        shapeLayer.lineJoin = kCALineJoinRound;
-        shapeLayer.frame = self.layer.bounds;
-        shapeLayer.strokeColor = [UIColor whiteColor].CGColor;
-        shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
-        shapeLayer.fillColor = nil;
-        [self.layer addSublayer:shapeLayer];
-        _shapeLayer = shapeLayer;
-        
-        self.translatesAutoresizingMaskIntoConstraints = NO;
         
         
-        /// gradient ----------------------------
-        _gradientLayer = [CAGradientLayer layer];
-        _gradientLayer.cornerRadius = TickViewSize / 2;
         UIColor *firstColor = [UIColor colorWithRed:40/255.0
                                               green:204/255.0
                                                blue:200/255.0
@@ -98,14 +80,21 @@ static const CGFloat TickViewSize = 122;
                                                green:160/255.0
                                                 blue:234/255.0
                                                alpha:1.0];
-        _gradientLayer.colors = @[(id)firstColor.CGColor, (id)secondColor.CGColor];
-        _gradientLayer.locations = [NSArray arrayWithObjects:[NSNumber numberWithInt: 0.0], [NSNumber numberWithInt: 1.0], nil];
-        _gradientLayer.startPoint = CGPointMake(0.0, 1.0);
-        _gradientLayer.endPoint = CGPointMake(1.0, 1.0);
-        [_gradientLayer removeFromSuperlayer];
-        [self.layer insertSublayer:_gradientLayer below:_shapeLayer];
-        /// ---------------------------------------------------------
+
+    
+        CAShapeLayer *shapeLayer = [CAShapeLayer new];
+        shapeLayer.path = path.CGPath;
+        shapeLayer.lineWidth = 5;
+        shapeLayer.lineCap = kCALineCapRound;
+        shapeLayer.lineJoin = kCALineJoinRound;
+        shapeLayer.frame = self.layer.bounds;
+        shapeLayer.strokeColor = firstColor.CGColor;
+        shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
+        shapeLayer.fillColor = nil;
+        [self.layer addSublayer:shapeLayer];
+        _shapeLayer = shapeLayer;
         
+        self.translatesAutoresizingMaskIntoConstraints = NO;
     }
     return self;
 }
@@ -113,7 +102,6 @@ static const CGFloat TickViewSize = 122;
 - (void)layoutSubviews {
     [super layoutSubviews];
     _shapeLayer.frame = self.layer.bounds;
-    _gradientLayer.frame = self.layer.bounds;
 }
 
 - (CGSize)intrinsicContentSize {
@@ -175,6 +163,8 @@ static const CGFloat TickViewSize = 122;
     _completionStepView = [ORKCompletionStepView new];
     if (self.checkmarkColor) {
         _completionStepView.tintColor = self.checkmarkColor;
+    } else {
+        _completionStepView.tintColor = [UIColor clearColor];
     }
     
     self.stepView.stepView = _completionStepView;

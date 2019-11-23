@@ -212,6 +212,7 @@
 "BUTTON_START_TIMER" = "Start Timer";
 "BUTTON_OPTION_SAVE" = "Save for Later";
 "BUTTON_OPTION_DISCARD" = "Discard Results";
+"BUTTON_OPTION_MESSAGE" = "In this case your data is not sent to your hospital.";
 "BUTTON_OPTION_STOP_TASK" = "End Task";
 "BUTTON_SAVE" = "Save";
 "BUTTON_CLEAR_ANSWER" = "Clear answer";

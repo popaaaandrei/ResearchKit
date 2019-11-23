@@ -212,6 +212,7 @@
 "BUTTON_START_TIMER" = "Start timer";
 "BUTTON_OPTION_SAVE" = "Bewaar voor later";
 "BUTTON_OPTION_DISCARD" = "Wis resultaten";
+"BUTTON_OPTION_MESSAGE" = "In dit geval worden uw gegevens naar uw ziekenhuis niet verzonden.";
 "BUTTON_OPTION_STOP_TASK" = "Stop met taak";
 "BUTTON_SAVE" = "Bewaar";
 "BUTTON_CLEAR_ANSWER" = "Wis antwoord";

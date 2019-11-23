@@ -1280,8 +1280,10 @@ static NSString *const _ChildNavigationControllerRestorationKey = @"childNavigat
         supportSaving = [self.delegate taskViewControllerSupportsSaveAndRestore:self];
     }
     
+    /// add confirmation text
+    NSString *message = ORKLocalizedString(@"BUTTON_OPTION_MESSAGE", nil);
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:nil
+                                                                   message:message
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     
     if ([sender isKindOfClass:[ORKBorderedButton class]]) {
